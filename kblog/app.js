@@ -6,8 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/main');
-var aiBoard = require('./routes/aiBoard');
-//var dbPool = require('./routes/dbPool');
+var aiListBoard = require('./routes/aiListBoard');
+var aiDetailBoard = require('./routes/aiDetailBoard');
 
 var app = express();
 
@@ -29,8 +29,8 @@ app.use(express.static(path.join(__dirname, 'views')));
 
 //use routes
 app.use('/', routes);
-app.use('/', aiBoard);
-//app.use('/', dbPool);
+app.use('/', aiListBoard);
+app.use('/', aiDetailBoard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

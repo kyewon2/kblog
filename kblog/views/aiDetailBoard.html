@@ -1,10 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <title>알고리즘 정리</title>
+
+    <script type="text/javascript">
+        $(function() {
+
+        });
+    </script>
 </head>
 <body>
 
+<!-- 상단 네비게이션 바 -->
+<!--
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">KBLOG</a>
+            &lt;!&ndash; 브라우저가 좁아졋을때 나오는 버튼(클릭시 메뉴출력) &ndash;&gt;
+            &lt;!&ndash;차후 네이게이션바 fa fa-bars 바꿔야함&ndash;&gt;
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">IT 관련 추천 북마크</a></li>
+                <li><a href="#">K - maker 소개</a></li>
+                <li><a href="#">알고리즘 정리</a></li>
+                <li><a href="#">관리자 로그인</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section id="contents" class="container-fluid">
+
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+                <div class="col-xs-6 text-right">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+    <div class="container">
+        <h2>알고리즘 관련 글</h2>
+        <p>놓치기 쉬운 내용</p>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>제목</th>
+            </tr>
+            <tr>
+                <th>내용</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><%= rows.title %></td>
+            </tr>
+            <tr>
+                <td><%= rows.content %></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
