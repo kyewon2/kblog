@@ -25,22 +25,22 @@
                         //if ( result['result'] == true ) {}
                     }
                 });
-
             });
 
-            /*$("tbody").on("click", "tr", function(e) {
+            $("#save").click(function() {
+                var title = $("#title-name").val();
+                var content = $("#message-text").val();
                 $.ajax({
-                    url : '/aiDetailBoard',
+                    url : '/aiInsertBoard',
                     type : 'POST',
-                    dataType : 'JSON',
-                    data : {'ailist_index' : $(this).index()},
-                    success : function() {
-                        console.log('success called /aiDetailBoard');
-                        //if ( result['result'] == true ) {}
+                    dataType: 'JSON',
+                    data : { title :title, content :content},
+                    success : function(data) {
+                        if (typeof data.redirect == 'string')
+                            window.location = data.redirect;
                     }
                 });
-
-            });*/
+            });
         });
     </script>
 </head>
@@ -88,6 +88,35 @@
         <% }); %>
         </tbody>
     </table>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertModal">글쓰기</button>
+
+<div class="modal fade" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="insertModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="insertModalLabel">글쓰기</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="title-name" class="control-label">title:</label>
+                        <input type="text" class="form-control" id="title-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="control-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save">Save</button>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
