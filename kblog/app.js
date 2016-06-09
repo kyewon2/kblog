@@ -9,6 +9,8 @@ var routes = require('./routes/main');
 var aiListBoard = require('./routes/aiListBoard');
 var aiDetailBoard = require('./routes/aiDetailBoard');
 var aiInsertBoard = require('./routes/aiInsertBoard');
+var aiDeleteBoard = require('./routes/aiDeleteBoard');
+var aiUpdateBoard = require('./routes/aiUpdateBoard');
 
 var app = express();
 
@@ -33,6 +35,8 @@ app.use('/', routes);
 app.use('/', aiListBoard);
 app.use('/', aiDetailBoard);
 app.use('/', aiInsertBoard);
+app.use('/', aiDeleteBoard);
+app.use('/', aiUpdateBoard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
