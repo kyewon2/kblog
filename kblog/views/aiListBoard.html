@@ -14,6 +14,21 @@
 
     <script type="text/javascript">
         $(function() {
+            //row에 해당 정보를 가져온다
+            /*var table = $("table tbody");
+            table.find('tr').each(function (i) {
+                var $tds = $(this).find('td'),
+                        idx = $tds.eq(0).text(),
+                        title = $tds.eq(1).text();
+
+                console.log("************************");
+                console.log(idx);
+                console.log(title);
+                alert('Row ' + (i + 1) + ':\nId: ' + idx
+                        + '\ntitle: ' + title);
+            });*/
+
+            //해당 row를 클릭했을때 이벤트
             $("tbody").on("click", "tr", function(e) {
                 var idx = $(this).index();
                 $.ajax({
